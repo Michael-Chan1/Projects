@@ -1,0 +1,273 @@
+{% load static %}
+<form method="POST">
+{% csrf_token %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum</title>
+    <link rel="stylesheet" href="{% static 'Forums/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital@1&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <nav class="navigation hide" id="navigation">
+                <span class="close-icon" id="close-icon" onclick="showIconBar()"><i class="fa fa-close"></i></span>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="{% url 'home_page' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'forums' %}">Communities</a>
+                    </li>
+                </ul>
+            </nav>
+            <a class="bar-icon" id="iconBar" onclick="hideIconBar()"><i class="fa fa-bars"></i></a>
+            <div class="brand">University of Toronto</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="subforum">
+            <div class="subforum-title">
+                <h1>General Suggestions</h1>
+            </div>
+            <div class="subforum-row">
+                <div class="subforum-icon">
+                    <i class="fa fa-book"></i>
+                </div>
+               <div class="subforum-description subforum-column">
+                   <h1><a href="1"> Increasing School Hours</a></h1>
+                   <p>I really love school and wish it was longer so I can cherish it even more! </p>
+               </div>
+               <div class="subforum-stats subforum-column center">
+                   <spans> 1 Post </spans>
+               </div>
+               <div class="subforum-info subforum-column">
+                   <b><a href="">Last Post</a></b> by <a href="">Amogh</a>
+                   <br>
+                   on <small>2021-02-2020</small>
+               </div>
+            </div>
+        </div>
+        <!--Other forum  COPY AND PASTE THESE IF YOU NEED MORE FORUM POSTS (NOT NECESSARY)-->
+        <div class="subforum">
+            <div class="subforum-title">
+                <h1>Mental Health Suggestions</h1>
+            </div>
+            <div class="subforum-row">
+                <div class="subforum-icon">
+                    <i class="fa fa-book"></i>
+                </div>
+               <div class="subforum-description subforum-column">
+                   <h1><a href="2">More Mental Health Resources</a></h1>
+                   <p>As it's exam season I would like more mental health resources pls!</p>
+                   <div class="voting">
+                       <button id="likebtn">
+                           <i class="fa fa-thumbs-up"></i>
+                       </button>
+                       <input type="number" id="input1" value="4" name="">
+
+                       <button id="likebtn">
+                        <i class="fa fa-thumbs-down"></i>
+                    </button>
+                    <input type="number" id="input2" value="5" name="">
+                   </div>
+               </div>
+               <div class="subforum-stats subforum-column center">
+                   <spans>23 Posts</spans>
+               </div>
+               <div class="subforum-info subforum-column">
+                   <b><a href="">Last Post</a></b> by <a href="">Shiven</a>
+                   <br>
+                   on <small>2020-02-20</small>
+               </div>
+            </div>
+            <div class="subforum-row">
+                <div class="subforum-icon">
+                    <i class="fa fa-book"></i>
+                </div>
+               <div class="subforum-description subforum-column">
+                   <h1><a href=""> Mindfulness sessions during lectures</a></h1>
+                   <p>I definitely feel like every student would need this...</p>
+                   <div class="voting">
+                    <button id="likebtn">
+                        <i class="fa fa-thumbs-up"></i>
+                    </button>
+                    <input type="number" id="input1" value="1" name="">
+
+                    <button id="likebtn">
+                     <i class="fa fa-thumbs-down"></i>
+                 </button>
+                 <input type="number" id="input2" value="3" name="">
+                </div>
+               </div>
+               <div class="subforum-stats subforum-column center">
+                   <spans>13 Posts</spans>
+               </div>
+               <div class="subforum-info subforum-column">
+                   <b><a href="">Last Post</a></b> by <a href="">James</a>
+                   <br>
+                   on <small>2019-03-19</small>
+               </div>
+            </div>
+        </div>
+        <div class="subforum">
+            <div class="subforum-title">
+                <h1>Teacher Related Suggestions</h1>
+            </div>
+            <div class="subforum-row">
+                <div class="subforum-icon">
+                    <i class="fa fa-book"></i>
+                </div>
+               <div class="subforum-description subforum-column">
+                   <h1><a href="">Teachers need to be paid more!</a></h1>
+                   <p>For all the hard work and value they have... they definitely need to be paid more!</p>
+                   <div class="voting">
+                    <button id="likebtn">
+                        <i class="fa fa-thumbs-up"></i>
+                    </button>
+                    <input type="number" id="input1" value="6" name="">
+
+                    <button id="likebtn">
+                     <i class="fa fa-thumbs-down"></i>
+                 </button>
+                 <input type="number" id="input2" value="5" name="">
+                </div>
+               </div>
+               <div class="subforum-stats subforum-column center">
+                   <spans>24 Posts</spans>
+               </div>
+               <div class="subforum-info subforum-column">
+                   <b><a href="">Last Post</a></b> by <a href="">Natalie</a>
+                   <br>
+                   on <small>2021-01-19</small>
+               </div>
+            </div>
+            <div class="subforum-row">
+                <div class="subforum-icon">
+                    <i class="fa fa-book"></i>
+                </div>
+               <div class="subforum-description subforum-column">
+                   <h1><a href="">Teachers should try to make learning more involved</a></h1>
+                   <p>Often times, I feel like learning gets uninteresting cuz teachers just read off of a book.... </p>
+                   <div class="voting">
+                    <button id="likebtn">
+                        <i class="fa fa-thumbs-up"></i>
+                    </button>
+                    <input type="number" id="input1" value="15" name="">
+
+                    <button id="likebtn">
+                     <i class="fa fa-thumbs-down"></i>
+                 </button>
+                 <input type="number" id="input2" value="2" name="">
+                </div>
+               </div>
+               <div class="subforum-stats subforum-column center">
+                   <spans>19 Posts</spans>
+               </div>
+               <div class="subforum-info subforum-column">
+                   <b><a href="">Last Post</a></b> by <a href="">Mia</a>
+                   <br>
+                   on <small>2019-01-18</small>
+               </div>
+            </div>
+            <div class="subforum-row">
+                <div class="subforum-icon">
+                    <i class="fa fa-book"></i>
+                </div>
+               <div class="subforum-description subforum-column">
+                   <h1><a href="">Teacher should give more check-ins</a></h1>
+                   <p>As a students it would feel nice knowing my teacher actually cares that mentally okay.</p>
+                   <div class="voting">
+                    <button id="likebtn">
+                        <i class="fa fa-thumbs-up"></i>
+                    </button>
+                    <input type="number" id="input1" value="13" name="">
+
+                    <button id="likebtn">
+                     <i class="fa fa-thumbs-down"></i>
+                 </button>
+                 <input type="number" id="input2" value="2" name="">
+                </div>
+               </div>
+               <div class="subforum-stats subforum-column center">
+                   <spans>21 Posts</spans>
+               </div>
+               <div class="subforum-info subforum-column">
+                   <b><a href="">Last Post</a></b> by <a href="">Billy</a>
+                   <br>
+                   on <small>2021-02-19</small>
+               </div>
+            </div>
+        </div>
+    </div>
+    {% if topic_list %}
+    <div class="container">
+        <div class="subforum">
+            <div class="subforum-title">
+                <h1>General</h1>
+            </div>
+            {% for topic in topic_list %}
+            <div class="subforum-row">
+                <div class="subforum-icon">
+                    <i class="fa fa-book"></i>
+                </div>
+               <div class="subforum-description subforum-column">
+                   <h1><a href="{{topic.id}}">{{topic.topic_name}}</a></h1>
+                   <p>{{topic.topic_description}}</p>
+               </div>
+               <div class="subforum-stats subforum-column center">
+                   <span>23 Post | 15 Topics</span>
+               </div>
+               <div class="subforum-info subforum-column">
+                   <b><a href="">Last Post</a></b> by <a href="">User</a>
+                   <br>
+                   on <small>Date</small>
+               </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+        <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Create A New Topic</h3>
+            </div>
+
+            <form action="/index/" method="POST">
+                    <input id="topic_name" type="text" name="topic_name">
+                    <input id="topic_description" type="text" name="topic_description">
+
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit">
+</form>
+        </div>
+    </div>
+</div>
+    <div class="forum-info">
+        <div class="chart">
+            University of Toronto - Stats &nbsp;<i class="fa fa-bar-chart"></i>
+        </div>
+        <span><u>5,369</u> Posts in <u>48</u> Topics by <u>8,124</u> Members.</span><br>
+        <span>Latest post: <b><a href="">Random post</a></b> on Dec 15 2021 By <a href="">RandomUser</a></span>.<br>
+        <span>Check <a href="">the latest posts</a> .</span><br>
+    </div>
+
+
+
+    <footer>
+        <span>&copy;  EduForums | All Rights Reserved</span>
+    </footer>
+    <script src="{% static 'Forums/forumnav.js' %}"></script>
+</body>
+</html>
